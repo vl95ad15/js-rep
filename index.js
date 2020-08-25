@@ -1,34 +1,41 @@
-// Task 1 (Найти расстояние между двумя точками)
+// Task 1.0 (Заполнить массив 20 числами которые делятся на 3, или на 5, или на 15 и вывести его на экран (цикл for))
 
-const x1 = 15;
-const y1 = 10;
-const x2 = 25;
-const y2 = 15;
+const a = [];
 
-const dist = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
-
-console.log(dist)
-
-// Task 2 (убедиться что числа удовлетворяют теореме Пифагора)
-
-const a = 2;
-const b = 2;
-const c = 8;
-
-if (Math.pow(c, 2) === Math.pow(a, 2) + Math.pow(b, 2)) {
-    console.log("Числа удовлетворяют теореме Пифагора")
-} else {
-    console.log("Числа НЕудовлетворяют теореме Пифагора")
+for (let i = 1; i <= 100; i += 1) {
+    if (i % 3 == 0) {
+        a.push(i);
+    }
+    if (i % 5 == 0) {
+        a.push(i);
+    }
+    if (i % 15 == 0) {
+        a.push(i);
+    }
 }
 
-// Task 3 (даны три числа, убедиться что они могут являться сторонами треугольника)
-
-const a1 = 2;
-const b1 = 6;
-const c1 = 9;
-
-if ((a1 + b1) > c1 && (a1 + c1) > b1 && (b1 + c1) > a1) {
-    console.log("Числа могут являться сторонами треугольника")
-} else {
-    console.log("Числа НЕмогут являться сторонами треугольника")
+for (let i = 0; i < 20; i += 1) {
+    console.log(`a[${i}] => ${a[i]}`);
 }
+
+// Task 1.1 (Посчитать произведение всех элементов находящихся в каждой третьей позиции)
+
+const b = a[2] * a[5] * a[8] * a[11] * a[14] * a[17];
+
+console.log(b)
+
+// Task 1.2 (Посчитать среднее арифметическое всех чисел)
+
+let sum = 0;
+
+for (let i = 0; i < a.length; i += 1) {
+    sum += a[i];
+}
+
+let avarage = sum / a.length;
+console.log(avarage);
+
+// Task 1.3 (Найти максимальное и минимальное число)
+
+console.log(Math.max.apply(null, a));
+console.log(Math.min.apply(null, a));
