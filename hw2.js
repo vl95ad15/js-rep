@@ -55,11 +55,20 @@ console.log(`Cреднее арифметическое всех чисел: ${a
 
 console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 
-const minmaxNum = (numbers) => {
-    let solution = `Максимальное и минимальное числа массива равны ${Math.max.apply(null, numbers)} и ${Math.min.apply(null, numbers)} соответственно`;
-    return solution;
+const maxNum = (numbers) => {
+    let max = Math.max.apply(null, numbers);
+    return max;
 }
 
-const minmaxNumRes = minmaxNum(numbers);
+const maxNumRes = maxNum(numbers);
 
-console.log(minmaxNumRes);
+console.log(`Максимальное значение массива равняется -= ${maxNumRes} =-`);
+
+const minNum = (numbers) => {
+    let min = Math.min.apply(null, numbers);
+    return min;
+}
+
+const minNumRes = minNum(numbers);
+
+console.log(`Минимальное значение массива равняется -= ${minNumRes} =-`);
