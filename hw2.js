@@ -1,9 +1,10 @@
 const numbers = [];
 
-let number = 3;
+const arrNum = (a, b, c, amount) => {
 
-function arrayNum(a, b, c) {
-    for (let counter = 0; counter < 20;) {
+    let number = 3;
+
+    for (let counter = 0; counter < amount;) {
         const matched = number % a === 0 || number % b === 0 || number % c === 0;
 
         if (matched) {
@@ -17,14 +18,13 @@ function arrayNum(a, b, c) {
     return numbers;
 }
 
-console.log(arrayNum(3, 5, 15));
+const arrNumRes = arrNum(3, 5, 15, 20);
+
+console.log(arrNumRes);
 
 console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 
-let product = 1;
-let position = 3;
-
-function eachPos() {
+const eachPos = (product, position) => {
 
     for (let index = 2; index < numbers.length; index += position) {
         product *= numbers[index];
@@ -33,15 +33,13 @@ function eachPos() {
     return product;
 }
 
-const answer = eachPos();
+const eachPosRes = eachPos(1, 3);
 
-console.log(`Произведение всех элементов находящихся в каждой ${position} позиции массива: ${answer}\n`);
+console.log(eachPosRes);
 
 console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 
-let sum = 0;
-
-function avarageSum() {
+const avarageSum = (sum) => {
 
     for (let i = 0; i < numbers.length; i += 1) {
         sum += numbers[i];
@@ -51,43 +49,17 @@ function avarageSum() {
     return avarage;
 }
 
-const av = avarageSum();
+const avarageSumRes = avarageSum(0);
 
-console.log(`Cреднее арифметическое всех чисел: ${av}\n`);
+console.log(`Cреднее арифметическое всех чисел: ${avarageSumRes}\n`);
 
 console.log("///////////////////////////////////////////////////////////////////////////////////////////////////////\n");
 
-let max = numbers[0];
-
-function maxNum() {
-
-    for (let index = 1; index < numbers.length; index += 1) {
-
-        if (max < numbers[index]) {
-            max = numbers[index];
-        }
-    }
-
-    return max;
+const minmaxNum = (numbers) => {
+    let solution = `Максимальное и минимальное числа массива равны ${Math.max.apply(null, numbers)} и ${Math.min.apply(null, numbers)} соответственно`;
+    return solution;
 }
 
-const maxAnswer = maxNum();
+const minmaxNumRes = minmaxNum(numbers);
 
-console.log(`Максимальное число массива: ${maxAnswer}\n`);
-
-let min = numbers[0];
-
-function minNum() {
-
-    for (let index = 1; index < numbers.length; index += 1) {
-        if (min > numbers[index]) {
-            min = numbers[index];
-        }
-    }
-
-    return min;
-}
-
-const minAnswer = minNum();
-
-console.log(`Минимальное число массива: ${minAnswer}\n`);
+console.log(minmaxNumRes);
