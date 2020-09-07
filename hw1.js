@@ -1,9 +1,20 @@
-function distance(x1, y1, x2, y2) {
-    const dist = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
+const point1 = {
+    x1: 15,
+    y1: 10,
+};
+
+const point2 = {
+    x2: 25,
+    y2: 15,
+};
+
+const distance = (point1, point2) => {
+
+    const dist = Math.sqrt(Math.pow((point2.x2 - point1.x1), 2) + Math.pow((point2.y2 - point1.y1), 2));
     return dist;
 }
 
-console.log(distance(15, 10, 25, 15));
+console.log(distance(point1, point2));
 
 console.log("/////////////////////////////////////////////////");
 
