@@ -1,11 +1,18 @@
 const numbers = [];
 
-const arrNum = (a, b, c, amount) => {
+const arrVal = {
+    a: 3,
+    b: 5,
+    c: 15,
+    amount: 20,
+};
+
+const arrNum = (arrVal) => {
 
     let number = 3;
 
-    for (let counter = 0; counter < amount;) {
-        const matched = number % a === 0 || number % b === 0 || number % c === 0;
+    for (let counter = 0; counter < arrVal.amount;) {
+        const matched = number % arrVal.a === 0 || number % arrVal.b === 0 || number % arrVal.c === 0;
 
         if (matched) {
             counter += 1;
@@ -18,7 +25,7 @@ const arrNum = (a, b, c, amount) => {
     return numbers;
 }
 
-const arrNumRes = arrNum(3, 5, 15, 20);
+const arrNumRes = arrNum(arrVal);
 
 console.log(arrNumRes);
 

@@ -18,12 +18,18 @@ console.log(distance(point1, point2));
 
 console.log("/////////////////////////////////////////////////");
 
-function theorem(a, b, c) {
-    const p = (Math.pow(c, 2) === Math.pow(a, 2) + Math.pow(b, 2));
+const sides = {
+    cat1: 3,
+    cat2: 4,
+    hyp: 5,
+};
+
+const theorem = (sides) => {
+    const p = (Math.pow(sides.hyp, 2) === Math.pow(sides.cat1, 2) + Math.pow(sides.cat2, 2));
     return p;
 }
 
-const result = theorem(3, 4, 5);
+const result = theorem(sides);
 
 const answer = result ? "удовлетворяют" : "не удовлетворяют";
 
@@ -31,12 +37,18 @@ console.log(`Числа ${answer} теореме Пифагора`);
 
 console.log("/////////////////////////////////////////////////");
 
-function triangle(a1, b1, c1) {
-    const check = (a1 + b1 > c1) && (b1 + c1 > a1) && (c1 + a1 > b1);
+const value = {
+    a1: 12,
+    b1: 13,
+    c1: 14,
+};
+
+function triangle(value) {
+    const check = (value.a1 + value.b1 > value.c1) && (value.b1 + value.c1 > value.a1) && (value.c1 + value.a1 > value.b1);
     return check;
 }
 
-const res = triangle(12, 13, 14);
+const res = triangle(value);
 
 const action = res ? "можно" : "нельзя";
 
