@@ -25,7 +25,7 @@ const getAge = (date) => {
     return Math.floor(years + days / (isLeapYear(now.getFullYear()) ? 366 : 365));
 }
 
-let blank = [{
+const people = [{
         firstName: "John",
         lastName: "Doe",
         middleName: "Henry",
@@ -121,22 +121,29 @@ const sortArr = (a, compare, direction = 1) => {
     }
 };
 
-const people = blank;
-
 sortArr(people, comparePerson);
 
 console.log(people);
 
-const ageArr = [];
+// const ageArr = people.map(person => person.age);
 
-for (let i = 0; i < 10; i += 1) {
-    ageArr.push(blank[i].age);
-}
+const sumAge = people.reduce((av, person) => av + person.age, 0);
 
-console.log(ageArr);
+const avAge = Math.round(sumAge / people.length);
 
-let av = 0;
+console.log(`Avarage age is ${avAge} year(s).`);
 
-for (let i = 0; i < ageArr.length; i += 1) {
-    av += ageArr[i] / ageArr.length;
-}
+let max = people[0];
+let min = people[0];
+
+people.forEach((person) => {
+    max = max.age < person.age ? person : max;
+});
+
+console.log(`The oldest person is ${max.firstName}. His(her) age is ${max.age} year(s).`);
+
+people.forEach((person) => {
+    min = min.age > person.age ? person : min;
+});
+
+console.log(`The youngest person is ${min.firstName}. His(her) age is ${min.age} year(s).`);
